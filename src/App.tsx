@@ -34,6 +34,11 @@ function App() {
     }
   }, [bmiResult]);
 
+  const handleReset = () => {
+    setHeight("");
+    setWeight("");
+  };
+
   return (
     <main className="container mx-auto flex min-h-screen flex-col items-center justify-center gap-8">
       <h1 className="text-3xl font-bold">BMI Calculator</h1>
@@ -59,6 +64,9 @@ function App() {
             <p className="text-xl">あなたのBMIは...</p>
             <p className="text-5xl font-bold">{bmiResult.toFixed(1)}</p>
             <p className="mt-2 text-2xl">{bmiCategory}</p>
+            <Button onClick={handleReset} className="mt-4 cursor-pointer">
+              リセット
+            </Button>
           </>
         )}
       </div>
